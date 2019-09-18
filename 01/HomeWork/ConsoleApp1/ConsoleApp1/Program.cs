@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace ConsoleApp1
 {
@@ -6,7 +7,13 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Enter your name");
+            string name = Console.ReadLine();
+            Thread.Sleep(5000);
+            Console.WriteLine($"Hello, {name}!");
+            Thread.Sleep(5000);
+            Console.WriteLine($"Goodbye, {name}!");
+            Console.ReadKey();
         }
     }
 }
