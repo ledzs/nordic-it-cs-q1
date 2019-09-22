@@ -9,7 +9,7 @@ namespace CalculatorEasy
             try
             {
                 Console.WriteLine("Введите первое число. Дробная часть вводится через запятую ");
-                double firstNumber = double.Parse(Console.ReadLine()); //сразу переводим в тип float после ввода
+                double firstNumber = double.Parse(Console.ReadLine()); //сразу переводим в тип double после ввода
                 Console.WriteLine("Введите второе число. Дробная часть вводится через запятую ");
                 double secondNumber = double.Parse(Console.ReadLine());
                 double addition = firstNumber + secondNumber;
