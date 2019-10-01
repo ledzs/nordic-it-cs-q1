@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    [Flags]
+    enum Colors
+    {
+        Black, //0
+        Blue, //1
+        Cyan, //2
+        Grey, //3
+        Green,
+        Magenta,
+        Red,
+        White, //7
+        Yellow //8
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           Colors[] allColors = (Colors[])Enum.GetValues(typeof(Colors));
+
+           foreach (Colors all in allColors)
+           {
+                string colorName = all.ToString();
+                int value = (int)all;
+                Console.WriteLine("Color = {0}, value= {1}", colorName, value);
+           }
+
+           int[] favoriteColor = new int[4]; 
+
+           for (int i = 0; i < 4; i++)
+           {
+               Console.WriteLine("Enter a {0} favorite color value ", i+1);
+               favoriteColor[i] = int.Parse(Console.ReadLine());
+           }
+
+           for (int i = 0; i < 4; i++)
+           {
+               Console.WriteLine("Your favorite color is {0}", allColors[favoriteColor[i]]);
+           }
+           
+           Console.ReadKey();
+        }
+    }
+}
