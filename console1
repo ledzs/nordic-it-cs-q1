@@ -1,0 +1,18 @@
+using System;
+
+namespace ConsoleApp1
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Console.WriteLine("Введите любое число");
+			int a = int.Parse(Console.ReadLine());
+			var message = (a < 100)
+				? "Число меньше 100"
+				: "Число больше 100";
+			Console.WriteLine(message);
+			Console.ReadLine(); 
+		}
+	}
+}
