@@ -1,0 +1,27 @@
+using System;
+using System.Text;
+namespace ConsoleApp2
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			string text = "   lorem  ipsum   dolor    sit amet   ";
+			text = text.Trim();//удаляем пробелы в начале и в конце
+			var words = text.Split(' ',StringSplitOptions.RemoveEmptyEntries); //разделяем по пробелу, возвращает массив
+			words[1] = words[1].ToUpper();//перезаписали элемент массива
+
+			String wordsNew = String.Join(" ", words);//собираем заново с одним пробелом
+			Console.WriteLine(wordsNew);
+			//substring для второго способа
+			var text2 = text.TrimEnd();
+			Console.WriteLine(text2);
+			Console.ReadLine();
+			//вторая версия через stringbuilder
+			var sb = new StringBuilder(text);
+			sb.Replace
+
+
+		}
+	}
+}
