@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp2
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			string stop = default(string);
+			List<double> numbers = new List<double>();
+			double result = 0;
+			double result2 = 0;
+			while (true)
+			{
+				try
+				{
+					Console.WriteLine("Введите число: ");
+					string number = Console.ReadLine();
+					if (number != "stop")
+					{
+						double i = double.Parse(number);
+						numbers.Add(i);
+					}
+					else
+					{
+						break;
+					}
+				}
+				catch (Exception)
+				{
+					Console.WriteLine("Ошибка ввода");
+					break;
+				}
+			}
+			for (int i = 0; i < numbers.Count; i++)
+			{
+				result += numbers[i] / numbers.Count;
+			}
+			for (int i = 0; i < numbers.Count; i++)
+			{
+				result2 += numbers[i];
+			}
+			Console.WriteLine($"Среднее: {result}");
+			Console.WriteLine($"Сумма: {result2}");
+			Console.WriteLine("Завершено");
+			Console.ReadKey();
+		}
+	}
+}

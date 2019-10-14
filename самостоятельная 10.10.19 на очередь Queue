@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp2
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+
+			Queue<int> numbers = new Queue<int>();
+
+
+			while (true)
+			{
+				try
+				{
+					Console.WriteLine("Введите число: ");
+					string number = Console.ReadLine();
+					if (number != "run" && number != "exit")
+					{
+						int i = int.Parse(number);
+						numbers.Enqueue(i);
+					}
+					else if (number == "run")
+					{
+						while (numbers.Count > 0)
+						{
+							int numbersDeque = numbers.Dequeue();
+							double sqrt = Math.Sqrt(numbersDeque);
+							Console.WriteLine(sqrt);
+						}
+						break;
+					}
+					else if (number == "exit")
+					{
+						Console.WriteLine($"Ввели exit, осталось элементов: {numbers.Count}");
+						break;
+					}
+				}
+				catch (Exception)
+				{
+					Console.WriteLine("Ошибка ввода");
+					break;
+				}
+			}
+			Console.ReadKey();
+		}
+	}
+}
