@@ -1,0 +1,29 @@
+using System;
+
+namespace ConsoleApp3
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			var pet1 = new Pet("Tom" , PetKind.Cat);
+			pet1.Sex = 'M';
+			pet1.DateOfBirth = new DateTime(2015, 3, 23);
+			pet1.Display(DisplayShort: false);
+			pet1.Display(true);
+
+
+
+			var pet2 = new Pet("Spike", PetKind.Dog)//не нужна ";" нельзя вызывать методы
+			{
+				Sex = 'M',
+				DateOfBirth = new DateTime(2018, 9, 15),
+			};
+
+			Console.WriteLine(pet2.Description);
+			Console.ReadKey();
+		}
+
+	}
+
+}
