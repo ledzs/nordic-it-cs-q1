@@ -26,16 +26,27 @@ namespace Natural_numbers
                         Console.WriteLine("Количество четных цифр: {0}", c);
                         break;
                     }
-                    else
+                    else if (number < 0 || number == 0)
                     {
-                        Console.WriteLine("Введено неверное значение, попробуйте еще раз");
+                        Console.WriteLine("Число должно быть больше 0");
                         continue;
                     }
+                    
                 }
-                catch (Exception e)
+                catch (FormatException)
                 {
-                    Console.WriteLine($"Ошибка! {e.GetType()}, попробуйте еще раз!");
+                    Console.WriteLine($"Неправильный формат введенного числа. Введите натуральное положительное число не более 2 млрд.");
                     continue;
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine($"Превышен допустимый размер введенного числа, введите число меньше 2 млрд");
+                    continue;
+                }
+                catch (Exception e) 
+                {
+                    Console.WriteLine("Возникло исключение");
+                    Console.WriteLine($"{e.GetType()}: {e.Message}"); 
                 }
             }
             Console.WriteLine("Нажмите любую клавишу для выхода");
