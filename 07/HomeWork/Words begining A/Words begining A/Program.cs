@@ -33,10 +33,15 @@ namespace Words_begining_A
                         continue;
                     }
                 }
-                catch (Exception e) 
+                catch (FormatException)
                 {
-                    Console.WriteLine("Возникло исключение:");
-                    Console.WriteLine($"{e.GetType()}: {e.Message}"); 
+                    Console.WriteLine($"Ошибка ввода строки!");
+                    continue;
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine($"Превышен допустимый размер введенной строки!");
+                    continue;
                 }
             }
             Console.ReadKey();
