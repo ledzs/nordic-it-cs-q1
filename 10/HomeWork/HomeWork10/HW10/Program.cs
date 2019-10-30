@@ -8,30 +8,27 @@ namespace HomeWork10
         {
             string[] names = new string[3];
             int[] ages = new int[3];
-            //string[] peoples = new string[3];
+            Peoples[] peoplesObj = new Peoples[3];
+
             for (int i = 0; i < 3; i++)
             {
-                Console.WriteLine($"Введите имя {i+1}-го человека:");
+                Console.WriteLine($"Введите имя {i + 1}-го человека:");
                 names[i] = Console.ReadLine();
                 Console.WriteLine($"Введите его возраст:");
                 ages[i] = int.Parse(Console.ReadLine());
-                string p = "peoples{i}";
-
-                Peoples p = new Peoples
+                peoplesObj[i] = new Peoples
                 {
                     Name = names[i],
                     Age = ages[i]
                 };
             }
-
-            Peoples p1 = new Peoples
+            for (int i = 0; i < 3; i++)
             {
-                Name = "Ivan",
-                Age = 23
-            };
-
-            Console.WriteLine(p1.Result);
+                Console.WriteLine(peoplesObj[i].Result);
+            }
+            Console.WriteLine("Нажмите любую клавишу для продолжения...");
             Console.ReadKey();
         }
     }
 }
+

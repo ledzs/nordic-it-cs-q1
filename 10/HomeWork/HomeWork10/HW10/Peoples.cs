@@ -1,4 +1,6 @@
-﻿namespace HomeWork10
+﻿using System;
+
+namespace HomeWork10
 {
     public class Peoples
     {
@@ -15,7 +17,7 @@
         {
             get
             {
-                return $"Name: {Name}, Age in 4 years: {AgeAfter4Year}.";
+                return $"Имя: {Name}, возраст через 4 года составит: {AgeAfter4Year}.";
             }
         }
 
