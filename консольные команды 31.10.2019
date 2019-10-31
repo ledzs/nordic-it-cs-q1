@@ -3,3 +3,5 @@ dotnet --list-sdks
 
 https://github.com/ledzs/nordic-it-cs-q1/blob/a2ebd5ed2706dfb69b5865d556a80e0d185bc1cf/11/HomeWork/Ver2/HW11/HW11/ReminderItem.cs#L18
 проверить, не надо еще раз выводить true
+
+ДЗ: сделать по шаблону синглтон только Console log writer и File log writer
