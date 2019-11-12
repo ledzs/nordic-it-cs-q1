@@ -6,6 +6,6 @@ https://github.com/ledzs/nordic-it-cs-q1/blob/master/13/HomeWork/HW13/HW13/Conso
 
 https://github.com/ledzs/nordic-it-cs-q1/blob/master/13/HomeWork/HW13/HW13/FileLogWriter.cs#L8
 
-Объяснял на занятии, как нужно сделать через массив интерфейсов //(массив с типом интерфейса) обращение через индекс
+Объяснял на занятии, как нужно сделать через массив интерфейсов //(массив с типом интерфейса) выводить через foreach
 
 https://github.com/ledzs/nordic-it-cs-q1/blob/master/13/HomeWork/HW13/HW13/MultipleLogWriter.cs#L9
