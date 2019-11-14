@@ -1,0 +1,4 @@
+public MultipleLogWriter(ILogWritter[] logWriterObject)
+            {
+				_logWriterObject = logWriterObject;
+            }
