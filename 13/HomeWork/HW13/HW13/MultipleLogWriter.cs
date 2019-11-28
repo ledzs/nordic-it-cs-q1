@@ -6,30 +6,34 @@ namespace HW13
     {
         public class MultipleLogWriter : ILogWritter
         {
-            private FileLogWriter fileLogWriterObject;
-            private ConsoleLogWriter consoleLogWriterObject;
-
-            public MultipleLogWriter(FileLogWriter fileLogWriter, ConsoleLogWriter consoleLogWriter)
+            private ILogWritter[] _logWriterObject;
+            
+            public MultipleLogWriter(params ILogWritter[] logWriterObject)
             {
-                fileLogWriterObject = fileLogWriter;
-                consoleLogWriterObject = consoleLogWriter;
+                _logWriterObject = logWriterObject;
             }
-            public void LogError(string message)
+            public void LogError(string message) 
             {
-                fileLogWriterObject.LogError(message);
-                consoleLogWriterObject.LogError(message);
+                foreach (ILogWritter objectName in _logWriterObject)
+                {
+                    objectName.LogError(message);
+                }
             }
 
             public void LogInfo(string message)
             {
-                fileLogWriterObject.LogInfo(message);
-                consoleLogWriterObject.LogInfo(message);
+                foreach (ILogWritter objectName in _logWriterObject)
+                {
+                    objectName.LogInfo(message);
+                }
             }
 
             public void LogWarning(string message)
             {
-                fileLogWriterObject.LogWarning(message);
-                consoleLogWriterObject.LogWarning(message);
+                foreach (ILogWritter objectName in _logWriterObject)
+                {
+                    objectName.LogWarning(message);
+                }
             }
         }
     }

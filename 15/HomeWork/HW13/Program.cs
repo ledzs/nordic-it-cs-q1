@@ -7,7 +7,7 @@ namespace HW13
     {
         static void Main(string[] args)
         {
-            var logInFile = new FileLogWriter("C:/StudioLog/Log.log");
+            var logInFile = new FileLogWriter();
             var logInConsole = new ConsoleLogWriter();
 
             var multipleLogWriter = new MultipleLogWriter(logInFile, logInConsole);
