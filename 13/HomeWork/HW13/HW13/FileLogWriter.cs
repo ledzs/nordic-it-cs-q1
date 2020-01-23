@@ -16,19 +16,19 @@ namespace HW13
         }
         public void LogError(string message)
         {
-            MessageType messageType = (MessageType)1;
+            MessageType messageType = MessageType.Error;
             Message(messageType, message);
         }
 
         public void LogInfo(string message)
         {
-            MessageType messageType = (MessageType)2;
+            MessageType messageType = MessageType.Info;
             Message(messageType, message);
         }
 
         public void LogWarning(string message)
         {
-            MessageType messageType = (MessageType)3;
+            MessageType messageType = MessageType.Warning;
             Message(messageType, message);
         }
     }
