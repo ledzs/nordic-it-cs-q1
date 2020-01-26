@@ -7,11 +7,8 @@ namespace HW13
     {
         static void Main(string[] args)
         {
-            //****расположение лога меняется в классе FileLogWriter.cs*****
-
-            var logInFile = FileLogWriter.GetInstance();
-            var logInConsole = ConsoleLogWriter.GetInstance();
-
+            var logInFile = new FileLogWriter("C:/StudioLog/Log.log");
+            var logInConsole = new ConsoleLogWriter();
 
             var multipleLogWriter = new MultipleLogWriter(logInFile, logInConsole);
 
