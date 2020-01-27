@@ -5,6 +5,17 @@ namespace HW13
 {
     public class FileLogWriter : ILogWritter
     {
+        //***********Singleton pattern************
+        private static FileLogWriter instance;
+
+        private FileLogWriter()
+        { }
+        public static FileLogWriter GetInstance()
+        {
+            return instance ?? (instance = new FileLogWriter());
+        }
+        //***********Singleton pattern************
+
         string filePath;
         public FileLogWriter(string path)  
         {
