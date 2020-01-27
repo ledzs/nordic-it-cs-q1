@@ -7,20 +7,22 @@ namespace HW13
     {
         //***********Singleton pattern************
         private static FileLogWriter instance;
-
-        private FileLogWriter()
-        { }
-        public static FileLogWriter GetInstance()
+        string filePath;
+        private FileLogWriter(string path)
+        { 
+            filePath = path;
+        }
+        public static FileLogWriter GetInstance(string path)
         {
-            return instance ?? (instance = new FileLogWriter());
+            return instance ?? (instance = new FileLogWriter(path));
         }
         //***********Singleton pattern************
 
-        string filePath;
-        public FileLogWriter(string path)  
-        {
-            filePath = path;
-        }
+       
+        //public FileLogWriter(string path)  
+        //{
+        //    filePath = path;
+        //}
         private void Message(MessageType messageType, string message)
         {
             File.AppendAllText($"{filePath}", $"\n{DateTime.Now.ToString("yyyy-MM-ddTHH:mm:sszzz")}\t{messageType}\t{message}");

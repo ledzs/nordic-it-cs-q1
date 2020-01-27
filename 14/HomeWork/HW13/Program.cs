@@ -7,8 +7,8 @@ namespace HW13
     {
         static void Main(string[] args)
         {
-            var logInFile = new FileLogWriter("C:/StudioLog/Log.log");
-            var logInConsole = new ConsoleLogWriter();
+            var logInFile = FileLogWriter.GetInstance("C:/StudioLog/Log.log");
+            var logInConsole = ConsoleLogWriter.GetInstance();
 
             var multipleLogWriter = new MultipleLogWriter(logInFile, logInConsole);
 
